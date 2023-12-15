@@ -1,0 +1,6 @@
+{
+    "ecsstractor_port.bem_nesting": true,
+    "ecsstractor_port.element_separator": "-",
+    "ecsstractor_port.indentation": "",
+    "ecsstractor_port.modifier_separator": "-"
+}

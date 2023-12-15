@@ -99,7 +99,9 @@ body.lock {
 .header {
   background-color: #fff;
   position: fixed;
-  width: 85vw;
+  right: 0;
+  width: 75vw;
+  z-index: 3;
 }
 .header-container {
   display: flex;
@@ -218,6 +220,56 @@ body.lock {
 
 /*--------------------/HEADER--------------------*/
 /*--------------------MAIN--------------------*/
+.sidebar {
+  height: 100vh;
+  width: 25vw;
+  background-color: #fff;
+  z-index: 4;
+  padding: 20px;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  /* .sidebar-content */
+  /* .sidebar-list */
+  /* .sidebar-item */
+}
+.sidebar-list {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 40px;
+}
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-radius: 12px;
+  padding: 15px 25px 15px 25px;
+}
+.sidebar-item-text {
+  font-size: 18px;
+}
+.sidebar-item.active {
+  background-color: #000;
+  color: #fff;
+  box-shadow: 2px 12px 73px -18px rgba(222, 157, 172, 0.85);
+}
+
+.logo {
+  /* .logo-img */
+  /* .logo-text */
+}
+.logo-text {
+  font-size: 40px;
+  font-weight: 900;
+  color: #000;
+}
+.logo-text span {
+  color: #DE9DAC;
+}
+
 /*--------------------/MAIN--------------------*/
 /*--------------------FOOTER--------------------*/
 /*--------------------/FOOTER--------------------*//*# sourceMappingURL=styles.css.map */
