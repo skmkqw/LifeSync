@@ -208,6 +208,93 @@ body.lock {
 
 /*--------------------/HEADER--------------------*/
 /*--------------------MAIN--------------------*/
+.task {
+  position: absolute;
+  z-index: 100;
+  overflow: auto;
+  left: 0;
+  right: 0;
+  top: -50px;
+  bottom: 0;
+  margin: auto;
+  width: 400px;
+  height: 420px;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  color: #000;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  box-shadow: 0px 5px 10px 9px rgba(34, 60, 80, 0.2);
+}
+.task.active {
+  visibility: visible;
+  opacity: 1;
+  top: 0;
+  pointer-events: all;
+}
+@media (max-width: 500px) {
+  .task {
+    width: 340px;
+  }
+}
+@media (max-height: 480px) {
+  .task {
+    height: 100vh;
+  }
+}
+.task-exit {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 25px;
+  right: 20px;
+}
+.task-exit span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  transform: rotate(45deg);
+  background-color: #000;
+  position: absolute;
+}
+.task-exit span:last-child {
+  transform: rotate(-45deg);
+}
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.task-title {
+  font-weight: 600;
+  font-size: 22px;
+}
+.task-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.task-input input {
+  border: 1px solid #b9b8b8;
+  padding: 10px;
+  border-radius: 5px;
+}
+.task-submit {
+  background-color: #DE9DAC;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 8px 0;
+  transition: all 0.3s;
+}
+.task-submit:hover {
+  background: #000;
+}
+
 .sidebar {
   height: 100vh;
   width: 25vw;
@@ -267,7 +354,6 @@ body.lock {
 }
 
 .logo {
-  /* .logo-img */
   /* .logo-text */
 }
 .logo-text {
@@ -277,6 +363,158 @@ body.lock {
 }
 .logo-text span {
   color: #DE9DAC;
+}
+
+.todo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 75vw;
+  height: 100%;
+  padding: 40px;
+  padding-top: 170px;
+  /* .todo-title */
+  /* .todo-content */
+  /* .todo-topline */
+  /* .todo-list */
+  /* .todo-item */
+}
+@media (max-width: 768px) {
+  .todo {
+    width: 100vw;
+  }
+}
+.todo-title {
+  font-weight: bold;
+  font-size: 60px;
+}
+@media (max-width: 768px) {
+  .todo {
+    text-align: center;
+  }
+}
+.todo-content {
+  background-color: #fff;
+  border-radius: 20px;
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  box-shadow: 2px 12px 73px -18px rgba(179, 179, 179, 0.85);
+}
+.todo-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 930px) {
+  .todo-topline {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+.todo-topline-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.todo-topline-add {
+  padding: 15px 25px 15px 25px;
+  font-weight: bold;
+  font-size: 30px;
+  background-color: #DE9DAC;
+  border-radius: 12px;
+  color: #fff;
+}
+.todo-topline-text {
+  font-size: 28px;
+}
+.todo-topline-dropdown {
+  padding: 20px 25px 20px 25px;
+  background-color: #DE9DAC;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: bold;
+  color: #fff;
+  font-size: 20px;
+}
+.todo-topline-dropdown-arrow img {
+  max-width: 20px;
+  max-height: 20px;
+}
+.todo-list {
+  display: flex;
+  flex-direction: column;
+}
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #aaa8a8;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+@media (max-width: 930px) {
+  .todo-item {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+.todo-item:first-child {
+  border-top: none;
+}
+.todo-item-title {
+  font-size: clamp(1.625rem, 0.852rem + 3.86vw, 3.75rem);
+}
+.todo-item-subtitle {
+  font-size: 20px;
+}
+.todo-item-status {
+  border-radius: 100%;
+  width: 14px;
+  height: 14px;
+  background-color: #DE9DAC;
+}
+.todo-item-left {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.todo-item-upper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+@media (max-width: 930px) {
+  .todo-item-upper {
+    margin: auto;
+  }
+}
+@media (max-width: 480px) {
+  .todo-item-upper {
+    gap: 6px;
+  }
+}
+@media (max-width: 930px) {
+  .todo-item-bottom {
+    text-align: center;
+  }
+}
+.todo-item-timer {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #DE9DAC;
+  border-radius: 14px;
+  padding: 20px 25px 20px 25px;
+}
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 }
 
 /*--------------------/MAIN--------------------*/

@@ -67,13 +67,13 @@ body{
 
 /*--------------------GLOBAL--------------------*/
 
-.text{
+// .text{
 
-}
+// }
 
-.title{
+// .title{
 
-}
+// }
 
 /*--------------------/GLOBAL--------------------*/
 
@@ -176,11 +176,6 @@ body{
 		gap: 30px;
 	}
 
-	// .menu-item
-
-	&-item {
-
-	}
 
 	// .menu-link
 
@@ -228,7 +223,103 @@ body{
 /*--------------------MAIN--------------------*/
 
 .main {
+    
 }
+
+.task
+{
+	position: absolute;
+	z-index: 100;
+	overflow: auto;
+	left: 0;
+	right: 0;
+	top: -50px;
+	bottom: 0;
+	margin: auto;
+	width: 400px;
+	height: 420px;
+	background-color: #fff;
+	border-radius: 20px;
+	padding: 20px;
+	color: #000;
+	visibility: hidden;
+	opacity: 0;
+	pointer-events:none;
+	transition: all 0.3s;
+	box-shadow: 0px 5px 10px 9px rgba(34, 60, 80, 0.2);
+	&.active{
+		visibility: visible;
+		opacity: 1;
+		top: 0;
+		pointer-events: all;
+	}
+	@media (max-width:500px){
+		width: 340px;
+	}
+	@media (max-height:480px){
+		height: 100vh;
+	}
+
+
+	&-exit{
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		top: 25px;
+		right: 20px;
+		span{
+			display: block;
+			width: 30px;
+			height: 3px;
+			transform: rotate(45deg);
+			background-color: #000;
+			position: absolute;
+			&:last-child{
+				transform: rotate(-45deg);
+			}
+		}
+	}
+
+
+	&-form {
+		display:flex;
+		flex-direction:column;
+		gap: 20px;
+	}
+
+
+	&-title {
+		font-weight: 600;
+		font-size: 22px;
+	}
+
+
+	&-input {
+		display:flex;
+		flex-direction:column;
+		gap: 10px;
+		input{
+			border: 1px solid #b9b8b8;
+			padding: 10px;
+			border-radius: 5px;
+		}
+	}
+
+
+	&-submit {
+		background-color: $secondary;
+		border-radius: 10px;
+		color: #fff;
+		font-weight: 600;
+		font-size: 16px;
+		padding: 8px 0;
+		transition: all 0.3s;
+		&:hover{
+			background: $primary;
+		}
+	}
+    }
+
     .sidebar {
 
         height: 100vh;
@@ -294,10 +385,6 @@ body{
             font-size: 18px;
         }
 
-        &-icon
-        {
-        }
-
         &.active
         {
             background-color: $primary;
@@ -309,11 +396,6 @@ body{
     }
 }
     .logo {
-
-        /* .logo-img */
-
-        &-img {
-        }
 
         /* .logo-text */
 
@@ -327,6 +409,190 @@ body{
         }
 }
 
+.todo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 75vw;
+    height: 100%;
+    padding: 40px;
+    padding-top: 170px;
+
+    @media(max-width:$break768)
+    {
+        width: 100vw;
+    }
+
+    /* .todo-title */
+    
+    &-title {
+        font-weight: bold;
+        font-size: 60px;
+    }
+    @media(max-width:$break768)
+    {
+        text-align: center;
+    }
+    
+    /* .todo-content */
+    
+    &-content {
+        background-color: #fff;
+        border-radius: 20px;
+        width: 100%;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        -webkit-box-shadow: 2px 12px 73px -18px rgba(179, 179, 179, 0.85);
+        -moz-box-shadow: 2px 12px 73px -18px rgba(179, 179, 179, 0.85);
+        box-shadow: 2px 12px 73px -18px rgba(179, 179, 179, 0.85);
+    }
+    
+    /* .todo-topline */
+    
+    &-topline {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media(max-width:930px)
+        {
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        &-buttons
+        {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        &-add
+        {
+            padding: 15px 25px 15px 25px;
+            font-weight: bold;
+            font-size: 30px;
+            background-color: $secondary;
+            border-radius: 12px;
+            color: $primaryLight;
+        }
+
+        &-text
+        {
+            font-size: 28px;
+        }
+
+        &-dropdown
+        {
+            padding: 20px 25px 20px 25px;
+            background-color: #DE9DAC;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: bold;
+            color: #fff;
+            font-size: 20px;
+            &-arrow
+            {
+                img{
+                    max-width: 20px;
+                    max-height: 20px;
+                }
+            }
+        }
+    }
+    
+    /* .todo-list */
+    
+    &-list {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* .todo-item */
+    
+    &-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid #aaa8a8;
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+        @media(max-width:930px)
+        {
+            flex-direction: column;
+            gap: 20px;
+        }
+        &:first-child
+        {
+            border-top: none;
+        }
+        &-title
+        {
+            font-size: clamp(1.625rem, 0.852rem + 3.86vw, 3.75rem);
+        }
+        &-subtitle
+        {
+            font-size: 20px;
+        }
+        &-status{
+            border-radius: 100%;
+            width: 14px;
+            height: 14px;
+            background-color: #DE9DAC;
+        }
+        &-left
+        {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        &-upper
+        {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            @media(max-width:930px)
+            {
+                margin: auto;
+            }
+            @media(max-width:$break480)
+            {
+                gap: 6px;
+            }
+        }
+        &-bottom
+        {
+            @media(max-width:930px)
+            {
+                text-align: center;
+            }
+        }
+
+        &-timer
+        {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            background-color: $secondary;
+            border-radius: 14px;
+            padding: 20px 25px 20px 25px;
+        }
+
+    }
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+}
+
+    
 
 /*--------------------/MAIN--------------------*/
 
