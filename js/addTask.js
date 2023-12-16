@@ -18,25 +18,28 @@ function saveTask() {
     var taskTitle = document.getElementById('taskTitle').value;
     var description = document.getElementById('description').value;
     var timeToDo = document.getElementById('timeToDo').value;
+	var category = document.getElementById('category').value;
 
     // Перевірка чи всі поля заповнені
     if (!taskTitle) {
         alert('Please fill in the task title.');
-		dataIsNormal = false;
         return;
     }
 
     if (!description) {
-		dataIsNormal = false;
         alert('Please fill in the task description.');
         return;
     }
 
     if (!timeToDo) {
-		dataIsNormal = false;
         alert('Please fill in the time to do.');
         return;
     }
+
+	if (!category) {
+        alert('Please fill in the category.');
+        return;
+	}
 
     // Перевірка правильності формату часу (час повинен бути числом)
     if (!/^\d+$/.test(timeToDo)) {
@@ -49,7 +52,8 @@ function saveTask() {
     var taskData = {
         taskTitle: taskTitle,
         description: description,
-        timeToDo: parseInt(timeToDo)  // Перетворити введений час у число
+        timeToDo: parseInt(timeToDo),  // Перетворити введений час у число
+        category: category  // Додайте категорію до об'єкту taskData
     };
 
     // Отримати раніше збережені завдання
@@ -71,6 +75,7 @@ function saveTask() {
 	document.getElementById('taskTitle').value = '';
 	document.getElementById('description').value = '';
 	document.getElementById('timeToDo').value = '';
+	document.getElementById('category').value = '';
 
 	// Закрываем меню после успешного добавления задачи
 	taskExit.click();
@@ -103,6 +108,10 @@ function displaySavedTasks() {
         titleDiv.className = 'todo-item-title';
         titleDiv.textContent = task.taskTitle;
 
+        var categoryDiv = document.createElement('div');  // Додайте новий елемент для відображення категорії
+        categoryDiv.className = 'todo-item-category';
+        categoryDiv.textContent = task.category;
+
         var bottomDiv = document.createElement('div');
         bottomDiv.className = 'todo-item-bottom';
 
@@ -113,6 +122,7 @@ function displaySavedTasks() {
         leftDiv.appendChild(upperDiv);
         upperDiv.appendChild(statusDiv);
         upperDiv.appendChild(titleDiv);
+        upperDiv.appendChild(categoryDiv);
         leftDiv.appendChild(bottomDiv);
         bottomDiv.appendChild(subtitleDiv);
 
