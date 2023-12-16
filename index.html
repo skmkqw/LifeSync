@@ -106,11 +106,15 @@
                         </div>
                     </div>
                     <div class="current-task" id="currentTask">
-                        <h2 id="currentTaskTitle"></h2>
-                        <p id="currentTaskDescription"></p>
-                        <p id="currentTaskTime">Time remaining: <span id="timer"></span></p>
-                        <p id="currentTaskCategory"></p>
-                        <button onclick="endGoingTask()">end task</button>
+                        <div class="current-container">
+                            <div class="current-heading">
+                                <h2 id="currentTaskTitle" class="current-title"></h2>
+                                <p id="currentTaskDescription" class="current-descr"></p>
+                            </div>
+                            <div id="currentTaskTime"><span id="timer"></span></div>
+                            <p id="currentTaskCategory" class="current-category"></p>
+                            <button onclick="endGoingTask()" class="current-btn">End task</button>
+                        </div>
                     </div>
                     
                     <ul class="todo-list" id="taskList"></ul>

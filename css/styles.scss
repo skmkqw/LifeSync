@@ -637,12 +637,23 @@ body{
 
         &-timer
         {
+
+        }
+        &-right
+        {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 25px 20px 25px;
             font-size: 24px;
             font-weight: bold;
             color: #fff;
             background-color: $secondary;
             border-radius: 14px;
-            padding: 20px 25px 20px 25px;
+            img{
+                max-width: 30px;
+                height: auto;
+            }
         }
 
     }
@@ -651,6 +662,67 @@ body{
         display: flex;
         flex-direction: column;
         gap: 45px;
+    }
+}
+
+.current
+{
+    &-container
+    {
+        display: flex;
+        padding: 30px;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+    &-task
+    {
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 30%;
+        margin: auto;
+        height: 400px;
+        width: 400px;
+        background-color: #fff;
+        border-radius: 20px;
+        -webkit-box-shadow: 2px 12px 73px -18px rgba(179, 179, 179, 0.85);
+        -moz-box-shadow: 2px 12px 73px -18px rgba(179, 179, 179, 0.85);
+        box-shadow: 2px 12px 73px -18px rgba(179, 179, 179, 0.85);
+        span{
+            font-size: 50px;
+            font-weight: bold;
+            color: $secondary;
+        }
+        button
+        {
+            display: block;
+            padding: 25px 25px 25px 25px;
+            border-radius: 14px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: $secondary;
+            color: $primaryLight;
+        }
+
+        p
+        {
+            font-size: 28px;
+        }
+    }
+    &-heading
+    {
+        font-size: 36px;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    &-descr
+    {
+        font-size: 24px;
+        font-weight: 400;
     }
 }
 
