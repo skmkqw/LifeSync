@@ -61,9 +61,12 @@ body{
 	padding: 0 20px;
 }
 
-.blur
+.btn
 {
-    filter: blur(5px);
+    transition: all 0.3s;
+    &:hover{
+        opacity: 0.8;
+    }
 }
 
 /*--------------------/BODY,CONTAINER--------------------*/
@@ -133,7 +136,7 @@ body{
 		@media (max-width:$break768) {
 			display: block;
 			position: relative;
-			z-index: 5;
+			z-index: 10 !important;
 			cursor: pointer;
 			height: 18px;
 			width: 30px;
@@ -872,6 +875,19 @@ body{
         flex-direction: column;
         gap: 40px;
     }
+
+    &-currencies
+    {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        @media(max-width:520px)
+        {
+            flex-direction: column;
+            gap: 5px;
+            align-items: stretch;
+        }
+    }
     
     /* .profile-title */
     
@@ -879,6 +895,10 @@ body{
         width: 100%;
         display: flex;
         justify-content: space-between;
+        @media(max-width:520px)
+        {
+            align-items: center;
+        }
         &-text{
             font-weight: bold;
             font-size: 60px;
@@ -905,6 +925,15 @@ body{
             align-items: center;
             flex-direction: column;
             gap: 20px;
+        }
+    }
+
+    &-charackter
+    {
+        img{
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
         }
     }
     
@@ -941,6 +970,10 @@ body{
         {
             flex: 1 1 100%;
         }
+        &:last-child
+        {
+            gap: 40px;
+        }
     }
 }
 
@@ -949,6 +982,7 @@ body{
     /* .user-title */
     
     &-title {
+        font-size: 24px;
     }
     
     /* .user-info */
@@ -998,6 +1032,7 @@ body{
             font-weight: bold;
         }
     }
+
     
 }
 

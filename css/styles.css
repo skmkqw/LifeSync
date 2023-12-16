@@ -92,8 +92,11 @@ body.lock {
   padding: 0 20px;
 }
 
-.blur {
-  filter: blur(5px);
+.btn {
+  transition: all 0.3s;
+}
+.btn:hover {
+  opacity: 0.8;
 }
 
 /*--------------------/BODY,CONTAINER--------------------*/
@@ -144,7 +147,7 @@ body.lock {
   .menu-icon {
     display: block;
     position: relative;
-    z-index: 5;
+    z-index: 10 !important;
     cursor: pointer;
     height: 18px;
     width: 30px;
@@ -760,10 +763,27 @@ body.lock {
   flex-direction: column;
   gap: 40px;
 }
+.profile-currencies {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+@media (max-width: 520px) {
+  .profile-currencies {
+    flex-direction: column;
+    gap: 5px;
+    align-items: stretch;
+  }
+}
 .profile-title {
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 520px) {
+  .profile-title {
+    align-items: center;
+  }
 }
 .profile-title-text {
   font-weight: bold;
@@ -791,6 +811,11 @@ body.lock {
     flex-direction: column;
     gap: 20px;
   }
+}
+.profile-charackter img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
 }
 .profile-content {
   display: flex;
@@ -821,6 +846,9 @@ body.lock {
     flex: 1 1 100%;
   }
 }
+.profile-block:last-child {
+  gap: 40px;
+}
 
 .user {
   /* .user-title */
@@ -829,6 +857,9 @@ body.lock {
   /* .user-profilepic */
   /* .user-username */
   /* .user-data */
+}
+.user-title {
+  font-size: 24px;
 }
 .user-info {
   display: flex;

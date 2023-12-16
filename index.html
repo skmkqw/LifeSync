@@ -29,7 +29,7 @@
                     <option value="Life">
                 </datalist>
 		</div>
-		<button type="submit" class="task-submit" onclick="saveTask()">Submit</button>
+		<button type="submit" class="task-submit btn" onclick="saveTask()">Submit</button>
     </form>
 </div>
 
@@ -92,7 +92,7 @@
                         <div class="todo-topline-text">Your assignments</div>
                         <div class="todo-topline-buttons">
                             <div class="todo-topline-dropdown">
-                                <div class="todo-topline-dropdown-head">
+                                <div class="todo-topline-dropdown-head btn">
                                   <div class="todo-topline-dropdown-text" id="todo-topline-dropdown-text">Today</div>
                                   <div class="todo-topline-dropdown-arrow"></div>
                                 </div>
@@ -102,7 +102,7 @@
                                   <div class="todo-topline-dropdown-item">This month</div>
                                 </div>
                               </div>
-                            <div class="todo-topline-add" id="task-form">+</div>
+                            <div class="todo-topline-add btn" id="task-form">+</div>
                         </div>
                     </div>
                     <div class="current-task" id="currentTask">
@@ -113,7 +113,7 @@
                             </div>
                             <div id="currentTaskTime"><span id="timer"></span></div>
                             <p id="currentTaskCategory" class="current-category"></p>
-                            <button onclick="endGoingTask()" class="current-btn">End task</button>
+                            <button onclick="endGoingTask()" class="current-btn btn">End task</button>
                         </div>
                     </div>
                     
@@ -184,9 +184,15 @@
             <div class="profile-container">
                 <div class="profile-title">
                     <div class="profile-title-text">Profile</div>
-                    <div class="profile-title-coins">
-                        <div class="profile-title-coins-icon"><img src="assets/coins.png" alt=""></div>
-                        <div class="profile-title-coins-text"></div>
+                    <div class="profile-currencies">
+                        <div class="profile-title-coins">
+                            <div class="profile-title-coins-icon"><img src="assets/coins.png" alt=""></div>
+                            <div class="profile-title-coins-text"></div>
+                        </div>
+                        <div class="profile-title-coins">
+                            <div class="profile-title-coins-icon"><img src="assets/gem 16.06.09.png" alt=""></div>
+                            <div class="profile-title-coins-text">0</div>
+                        </div>
                     </div>
                 </div>
                 <div class="profile-content">
@@ -207,6 +213,9 @@
                     </div>
                     <div class="profile-block">
                         <div class="user-title">Your charackter</div>
+                        <div class="profile-charackter">
+                            <img src="assets/5.png" alt="">
+                        </div>
                     </div>
                 </div>
             </div>

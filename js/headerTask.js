@@ -1,4 +1,3 @@
-// Зчитування значення isTaskChosen з локального сховища
 var isTaskChosen = localStorage.getItem('isTaskChosen') === 'true';
 
 if (isTaskChosen == null){
@@ -10,11 +9,9 @@ if (isTaskChosen == null){
 function endGoingTask(){
     isTaskChosen = !isTaskChosen;
     updateTaskDisplay();
-    // Збереження нового значення в локальному сховищі
     localStorage.setItem('isTaskChosen', isTaskChosen);
 }
 
-// Функція для відображення або приховування елементів в залежності від значення isTaskChosen
 function updateTaskDisplay() {
     var currentTaskElement = document.getElementById('currentTask');
     var taskListElement = document.getElementById('taskList');
@@ -26,11 +23,9 @@ function updateTaskDisplay() {
     }
 }
 
-// Викликати функцію для встановлення початкового стану
 updateTaskDisplay();
 
 
-///timer
 var timerElement = document.getElementById('timer');
 var countdownInterval;
 
@@ -76,17 +71,13 @@ insertUserData(loadedUser)
 
 function endGoingTask() {
     clearInterval(countdownInterval);
-    // Додайте код, який буде виконуватися при завершенні завдання
-    alert('Task completed!');
     loadedUser.updateBalance(10)
     loadedUser.saveToLocalStorage()
     alert("Earned 10 coins!")
     displayBalance(loadedUser.balance)
 
-    // Очищення попереднього інтервалу та інших необхідних дій
     isTaskChosen = false;
     localStorage.setItem('isTaskChosen', isTaskChosen);
     updateTaskDisplay();
-    // Очищення локального сховища для демонстрації
     localStorage.removeItem('currentTaskData');
 }
