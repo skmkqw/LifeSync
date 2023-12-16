@@ -559,18 +559,74 @@ body.lock {
     text-align: center;
   }
 }
-.todo-item-timer {
+.todo-item-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 25px 20px 25px;
   font-size: 24px;
   font-weight: bold;
   color: #fff;
   background-color: #DE9DAC;
   border-radius: 14px;
-  padding: 20px 25px 20px 25px;
+}
+.todo-item-right img {
+  max-width: 30px;
+  height: auto;
 }
 .todo-container {
   display: flex;
   flex-direction: column;
   gap: 45px;
+}
+
+.current-container {
+  display: flex;
+  padding: 30px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.current-task {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 30%;
+  margin: auto;
+  height: 400px;
+  width: 400px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 2px 12px 73px -18px rgba(179, 179, 179, 0.85);
+}
+.current-task span {
+  font-size: 50px;
+  font-weight: bold;
+  color: #DE9DAC;
+}
+.current-task button {
+  display: block;
+  padding: 25px 25px 25px 25px;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #DE9DAC;
+  color: #fff;
+}
+.current-task p {
+  font-size: 28px;
+}
+.current-heading {
+  font-size: 36px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.current-descr {
+  font-size: 24px;
+  font-weight: 400;
 }
 
 .stats {

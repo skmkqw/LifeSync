@@ -140,13 +140,21 @@ function displaySavedTasks() {
         timerDiv.className = 'todo-item-timer';
         timerDiv.textContent = task.timeToDo;
 
+        var startTimerBtn = document.createElement('div');
+        startTimerBtn.className = 'todo-item-start'
+        const img = document.createElement('img')
+        img.src = 'assets/play.png'
+        startTimerBtn.appendChild(img)
+
+
+        rightDiv.appendChild(startTimerBtn)
         rightDiv.appendChild(timerDiv);
 
         listItem.appendChild(leftDiv);
         listItem.appendChild(rightDiv);
 
         taskList.appendChild(listItem);
-		listItem.addEventListener('click', function () {
+		startTimerBtn.addEventListener('click', function () {
 			// Очищення попереднього інтервалу (якщо такий існує)
 			clearInterval(countdownInterval);
 	
