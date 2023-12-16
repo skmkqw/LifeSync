@@ -132,7 +132,7 @@
                                 <div class="stats-list-item">
                                     <div class="stats-list-item-title">Today</div>
                                     <div class="stats-list-item-data">
-                                        <div class="stats-list-item-data-text">08:14:51</div>
+                                        <div class="stats-list-item-data-text" id="timeForLifeDisplay"></div>
                                         <div class="stats-list-item-data-img"><img src="assets/flower.png" alt=""></div>
                                     </div>
                                 </div>
@@ -157,7 +157,7 @@
                                 <div class="stats-list-item">
                                     <div class="stats-list-item-title">Work Time</div>
                                     <div class="stats-list-item-data">
-                                        <div class="stats-list-item-data-text">06:24:81</div>
+                                        <div class="stats-list-item-data-text" id="timeForWorkDisplay">06:24:81</div>
                                         <div class="stats-list-item-data-img"><img src="assets/timer.png" alt=""></div>
                                     </div>
                                 </div>
@@ -220,9 +220,11 @@
     <script src="js/pageSelection.js"></script>
     <script src="js/dropdown.js"></script>
     <script src="js/headerTask.js"></script>
+    <script src="js/statistics.js"></script>
     <script>
         window.onload = function () {
             displaySavedTasks();
+            setTimeForStatistics();
         };
     </script>
 </body>

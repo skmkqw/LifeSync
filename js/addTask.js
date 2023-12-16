@@ -19,6 +19,13 @@ function saveTask() {
     var description = document.getElementById('description').value;
     var timeToDo = document.getElementById('timeToDo').value;
 	var category = document.getElementById('category').value;
+    if(category == 'work'){
+
+        category = 'Work';
+    }
+    if(category == 'life'){
+        category = 'Life';
+    }
     var frequency = document.getElementById('todo-topline-dropdown-text').textContent;
     console.log(frequency);
 
@@ -45,8 +52,13 @@ function saveTask() {
 
     // Перевірка правильності формату часу (час повинен бути числом)
     if (!/^\d+$/.test(timeToDo)) {
-		dataIsNormal = false;
         alert('Please enter a valid time (numeric value only).');
+        return;
+    }
+
+    // Перевірка правильності формату категорії
+    if (category != 'Work'  && category != 'Life') {
+        alert('Please enter a valid category (Work/Life).');
         return;
     }
 
@@ -223,6 +235,17 @@ function displaySavedTasks() {
             else if(frequency == 'This month'){
                localStorage.setItem('tasksMonth', JSON.stringify(savedTasks));
             }
+
+            if(task.category = 'Work'){
+                var timeForWork = localStorage.getItem('timeForWork');
+                timeForWork = Number(timeForWork) + Number(task.timeToDo);
+                localStorage.setItem('timeForWork', JSON.stringify(timeForWork))
+            } else  if(task.category = 'Life'){
+                var timeForLife = localStorage.getItem('timeForLife');
+                timeForLife = Number(timeForLife) + Number(task.timeToDo);
+                localStorage.setItem('timeForLife', JSON.stringify(timeForLife))
+            }
+            setTimeForStatistics()
 	
 			displaySavedTasks();
 		});
