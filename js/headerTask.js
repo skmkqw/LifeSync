@@ -54,10 +54,35 @@ function startTimer(durationInSeconds) {
     }, 1000);
 }
 
+let loadedUser = User.loadFromLocalStorage();
+
+if (!loadedUser) {
+    const new_user = new User('@jnkjn', 'John Doe', 'john@example.com', '123-456-7890', 'Premium', 100);
+    new_user.saveToLocalStorage();
+    loadedUser = new_user;
+}
+
+
+function displayBalance(balance) {
+    const balanceDisplay = document.querySelector('.profile-title-coins-text');
+    if (balanceDisplay) {
+        balanceDisplay.textContent = balance;
+    }
+}
+
+// Display the balance
+displayBalance(loadedUser.balance);
+insertUserData(loadedUser)
+
 function endGoingTask() {
     clearInterval(countdownInterval);
     // Додайте код, який буде виконуватися при завершенні завдання
     alert('Task completed!');
+    loadedUser.updateBalance(10)
+    loadedUser.saveToLocalStorage()
+    alert("Earned 10 coins!")
+    displayBalance(loadedUser.balance)
+
     // Очищення попереднього інтервалу та інших необхідних дій
     isTaskChosen = false;
     localStorage.setItem('isTaskChosen', isTaskChosen);
