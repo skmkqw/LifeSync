@@ -1012,6 +1012,7 @@ body{
         display: flex;
         flex-direction: column;
         gap: 20px;
+        font-size: 45px;
         &-text
         {
             font-size: 45px;
@@ -1074,6 +1075,7 @@ body{
             font-size: 18px;
             @media(max-width:$break992)
             {
+                text-align: center;
                 font-size: 26px;
             }
         }
