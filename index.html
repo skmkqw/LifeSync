@@ -62,15 +62,16 @@
                 <div class="sidebar-content">
                     <div class="sidebar-list">
                         <div class="sidebar-item active tabs-title" data-tab="todo">
-                            <div class="sidebar-item-icon"><img src="assets/tasks.png" alt=""></div>
+                            <div class="sidebar-item-icon"><img src="assets/todolist.png" alt=""></div>
                             <div class="sidebar-item-text">Your Tasks</div>
                         </div>
                         <div class="sidebar-item tabs-title" data-tab="stats">
-                            <div class="sidebar-item-icon"><img src="assets/statistics.png" alt=""></div>
+                            <div class="sidebar-item-icon"><img src="assets/stats.png" alt="">
+                                </div>
                             <div class="sidebar-item-text">Statistics</div>
                         </div>
                         <div class="sidebar-item tabs-title" data-tab="profile">
-                            <div class="sidebar-item-icon"><img src="assets/user.png" alt=""></div>
+                            <div class="sidebar-item-icon"><img src="assets/usr.png" alt=""></div>
                             <div class="sidebar-item-text">Your Profile</div>
                         </div>
                     </div>
@@ -85,9 +86,16 @@
                         <div class="todo-topline-text">Your assignments</div>
                         <div class="todo-topline-buttons">
                             <div class="todo-topline-dropdown">
-                                <div class="todo-topline-dropdown-text">Today</div>
-                                <div class="todo-topline-dropdown-arrow"><img src="assets/arrow.svg" alt="" srcset=""></div>
-                            </div>
+                                <div class="todo-topline-dropdown-head">
+                                  <div class="todo-topline-dropdown-text">Today</div>
+                                  <div class="todo-topline-dropdown-arrow"></div>
+                                </div>
+                                <div class="todo-topline-dropdown-content">
+                                  <div class="todo-topline-dropdown-item">Today</div>
+                                  <div class="todo-topline-dropdown-item">This week</div>
+                                  <div class="todo-topline-dropdown-item">This month</div>
+                                </div>
+                              </div>
                             <div class="todo-topline-add" id="task-form">+</div>
                         </div>
                     </div>
@@ -227,67 +235,6 @@
                 </div>
             </div>
         </section>
-        <section class="todo tab hidden" id="main">
-            <div class="todo-container">
-                <div class="todo-title">Profile</div>
-                <div class="todo-content">
-                    <div class="todo-topline">
-                        <div class="todo-topline-text">Your assignments</div>
-                        <div class="todo-topline-buttons">
-                            <div class="todo-topline-dropdown">
-                                <div class="todo-topline-dropdown-text">Today</div>
-                                <div class="todo-topline-dropdown-arrow"><img src="assets/arrow.svg" alt="" srcset=""></div>
-                            </div>
-                            <div class="todo-topline-add" id="task-form">+</div>
-                        </div>
-                    </div>
-                    <ul class="todo-list">
-                        <div class="todo-item">
-                            <div class="todo-item-left">
-                                <div class="todo-item-upper">
-                                    <div class="todo-item-status"></div>
-                                    <div class="todo-item-title">Finish Project</div>
-                                </div>
-                                <div class="todo-item-bottom">
-                                    <div class="todo-item-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing.</div>
-                                </div>
-                            </div>
-                            <div class="todo-item-right">
-                                <div class="todo-item-timer">01:23:12</div>
-                            </div>
-                        </div>
-                        <div class="todo-item">
-                            <div class="todo-item-left">
-                                <div class="todo-item-upper">
-                                    <div class="todo-item-status"></div>
-                                    <div class="todo-item-title">Finish Project</div>
-                                </div>
-                                <div class="todo-item-bottom">
-                                    <div class="todo-item-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing.</div>
-                                </div>
-                            </div>
-                            <div class="todo-item-right">
-                                <div class="todo-item-timer">01:23:12</div>
-                            </div>
-                        </div>
-                        <div class="todo-item">
-                            <div class="todo-item-left">
-                                <div class="todo-item-upper">
-                                    <div class="todo-item-status"></div>
-                                    <div class="todo-item-title">Finish Project</div>
-                                </div>
-                                <div class="todo-item-bottom">
-                                    <div class="todo-item-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing.</div>
-                                </div>
-                            </div>
-                            <div class="todo-item-right">
-                                <div class="todo-item-timer">01:23:12</div>
-                            </div>
-                        </div>
-                    </ul>
-                </div>
-            </div>
-        </section>
     </main>
     
 
@@ -295,5 +242,6 @@
     <script src="js/menu.js"></script>
     <script src="js/addTask.js"></script>
     <script src="js/pageSelection.js"></script>
+    <script src="js/dropdown.js"></script>
 </body>
 </html>

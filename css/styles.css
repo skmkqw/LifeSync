@@ -216,7 +216,6 @@ body.lock {
   height: 100%;
   padding: 40px;
   padding-top: 120px;
-  z-index: -1;
 }
 @media (max-width: 768px) {
   .tab {
@@ -377,7 +376,7 @@ body.lock {
   font-size: 18px;
 }
 .sidebar-item.active {
-  background-color: #000;
+  background-color: #DE9DAC;
   color: #fff;
   box-shadow: 2px 12px 73px -18px rgba(222, 157, 172, 0.85);
 }
@@ -452,10 +451,55 @@ body.lock {
   font-weight: bold;
   color: #fff;
   font-size: 20px;
+  position: relative;
 }
-.todo-topline-dropdown-arrow img {
-  max-width: 20px;
-  max-height: 20px;
+.todo-topline-dropdown-arrow {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #fff;
+  transition: transform 0.3s ease-in-out;
+}
+.todo-topline-dropdown-head {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0px 20px;
+  background-color: #DE9DAC;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+.todo-topline-dropdown-content {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  background-color: #DE9DAC;
+  border-radius: 7px;
+  box-shadow: 0 0 5px 1px #888686;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.3s;
+  z-index: 5;
+}
+.todo-topline-dropdown-content.active {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(5px);
+}
+.todo-topline-dropdown-item {
+  padding: 10px 25px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.todo-topline-dropdown-item:hover {
+  opacity: 0.8;
 }
 .todo-list {
   display: flex;
