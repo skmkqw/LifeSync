@@ -157,7 +157,8 @@ function displaySavedTasks() {
 		startTimerBtn.addEventListener('click', function () {
 			// Очищення попереднього інтервалу (якщо такий існує)
 			clearInterval(countdownInterval);
-	
+            
+
 			isTaskChosen = !isTaskChosen;
 			updateTaskDisplay();
 			localStorage.setItem('isTaskChosen', isTaskChosen);

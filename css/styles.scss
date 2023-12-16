@@ -61,6 +61,11 @@ body{
 	padding: 0 20px;
 }
 
+.blur
+{
+    filter: blur(5px);
+}
+
 /*--------------------/BODY,CONTAINER--------------------*/
 
 
@@ -350,7 +355,7 @@ body{
         height: 100vh;
         width: 25vw;
         background-color: #fff;
-        z-index: 4;
+        z-index: 4 !important;
         padding: 20px;
         padding-top: 40px;
         transition:  all 0.3s;
@@ -545,7 +550,7 @@ body{
                 visibility: hidden;
                 pointer-events: none;
                 transition: all 0.3s;
-                z-index: 5;
+                // z-index: 2;
                 &.active{
                     visibility: visible;
                     opacity: 1;
@@ -690,6 +695,10 @@ body{
         -webkit-box-shadow: 2px 12px 73px -18px rgba(179, 179, 179, 0.85);
         -moz-box-shadow: 2px 12px 73px -18px rgba(179, 179, 179, 0.85);
         box-shadow: 2px 12px 73px -18px rgba(179, 179, 179, 0.85);
+        @media(max-width:$break480)
+        {
+            width: 85vw;
+        }
         span{
             font-size: 50px;
             font-weight: bold;
