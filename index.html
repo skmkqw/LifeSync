@@ -23,7 +23,7 @@
             <label for="timeToDo">Time to do</label>
 			<input type="timeToDo" placeholder="8h" id="timeToDo">
 		</div>
-		<button type="submit" class="task-submit">Submit</button>
+		<button type="submit" class="task-submit" onclick="saveTask()">Submit</button>
     </form>
 </div>
 
@@ -99,50 +99,7 @@
                             <div class="todo-topline-add" id="task-form">+</div>
                         </div>
                     </div>
-                    <ul class="todo-list">
-                        <div class="todo-item">
-                            <div class="todo-item-left">
-                                <div class="todo-item-upper">
-                                    <div class="todo-item-status"></div>
-                                    <div class="todo-item-title">Finish Project</div>
-                                </div>
-                                <div class="todo-item-bottom">
-                                    <div class="todo-item-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing.</div>
-                                </div>
-                            </div>
-                            <div class="todo-item-right">
-                                <div class="todo-item-timer">01:23:12</div>
-                            </div>
-                        </div>
-                        <div class="todo-item">
-                            <div class="todo-item-left">
-                                <div class="todo-item-upper">
-                                    <div class="todo-item-status"></div>
-                                    <div class="todo-item-title">Finish Project</div>
-                                </div>
-                                <div class="todo-item-bottom">
-                                    <div class="todo-item-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing.</div>
-                                </div>
-                            </div>
-                            <div class="todo-item-right">
-                                <div class="todo-item-timer">01:23:12</div>
-                            </div>
-                        </div>
-                        <div class="todo-item">
-                            <div class="todo-item-left">
-                                <div class="todo-item-upper">
-                                    <div class="todo-item-status"></div>
-                                    <div class="todo-item-title">Finish Project</div>
-                                </div>
-                                <div class="todo-item-bottom">
-                                    <div class="todo-item-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing.</div>
-                                </div>
-                            </div>
-                            <div class="todo-item-right">
-                                <div class="todo-item-timer">01:23:12</div>
-                            </div>
-                        </div>
-                    </ul>
+                    <ul class="todo-list" id="taskList"></ul>
                 </div>
             </div>
         </section>
@@ -243,5 +200,10 @@
     <script src="js/addTask.js"></script>
     <script src="js/pageSelection.js"></script>
     <script src="js/dropdown.js"></script>
+    <script>
+        window.onload = function () {
+        displaySavedTasks();
+        };
+    </script>
 </body>
 </html>
