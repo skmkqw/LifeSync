@@ -21,10 +21,8 @@ function updateTaskDisplay() {
 
     if (isTaskChosen) {
         currentTaskElement.style.display = 'block';
-        taskListElement.style.display = 'none';
     } else {
         currentTaskElement.style.display = 'none';
-        taskListElement.style.display = 'block';
     }
 }
 
