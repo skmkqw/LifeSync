@@ -15,6 +15,7 @@ dropdownItems.forEach(item => {
     dropdownText.textContent = item.textContent;
     dropdownContent.classList.remove('active');
     dropdownArrow.classList.remove('active');
+    displaySavedTasks();
   });
 });
 
