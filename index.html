@@ -22,6 +22,12 @@
 			<input type="description" placeholder="Task description" id="description">
             <label for="timeToDo">Time to do</label>
 			<input type="timeToDo" placeholder="8h" id="timeToDo">
+            <label for="category">Сategory</label>
+			<input type="category" list="categories" placeholder="Сhoose a category" id="category">
+                <datalist id="categories">
+                    <option value="job">
+                    <option value="life">
+                </datalist>
 		</div>
 		<button type="submit" class="task-submit" onclick="saveTask()">Submit</button>
     </form>
