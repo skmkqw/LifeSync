@@ -208,6 +208,26 @@ body.lock {
 
 /*--------------------/HEADER--------------------*/
 /*--------------------MAIN--------------------*/
+.tab {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 75vw;
+  height: 100%;
+  padding: 40px;
+  padding-top: 120px;
+  z-index: -1;
+}
+@media (max-width: 768px) {
+  .tab {
+    width: 100vw;
+    text-align: center;
+  }
+}
+.tab.hidden {
+  display: none;
+}
+
 .task {
   position: absolute;
   z-index: 100;
@@ -296,6 +316,9 @@ body.lock {
 }
 
 .sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
   height: 100vh;
   width: 25vw;
   background-color: #fff;
@@ -328,7 +351,7 @@ body.lock {
 }
 @media (max-width: 768px) {
   .sidebar-container {
-    padding-top: 50%;
+    padding-top: 20vh;
   }
 }
 .sidebar-list {
@@ -343,6 +366,12 @@ body.lock {
   gap: 15px;
   border-radius: 12px;
   padding: 15px 25px 15px 25px;
+}
+@media (max-width: 768px) {
+  .sidebar-item {
+    padding: 25px 35px 25px 35px;
+    font-size: 30px;
+  }
 }
 .sidebar-item-text {
   font-size: 18px;
@@ -366,32 +395,15 @@ body.lock {
 }
 
 .todo {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 75vw;
-  height: 100%;
-  padding: 40px;
-  padding-top: 170px;
   /* .todo-title */
   /* .todo-content */
   /* .todo-topline */
   /* .todo-list */
   /* .todo-item */
 }
-@media (max-width: 768px) {
-  .todo {
-    width: 100vw;
-  }
-}
 .todo-title {
   font-weight: bold;
   font-size: 60px;
-}
-@media (max-width: 768px) {
-  .todo {
-    text-align: center;
-  }
 }
 .todo-content {
   background-color: #fff;
@@ -514,9 +526,237 @@ body.lock {
 .todo-container {
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 45px;
 }
 
+.stats {
+  /* .stats-container */
+  /* .stats-column */
+  /* .stats-item */
+  /* .stats-list */
+}
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.stats-img img {
+  max-width: 80%;
+  height: auto;
+}
+.stats-title {
+  font-weight: bold;
+  font-size: 60px;
+}
+.stats-content {
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 1320px) {
+  .stats-content {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+.stats-column {
+  flex: 0 1 48%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.stats-column-title {
+  font-size: 28px;
+}
+@media (max-width: 1320px) {
+  .stats-column {
+    flex: auto;
+    gap: 50px;
+  }
+}
+.stats-item {
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.875rem, 1.42rem + 2.27vw, 3.125rem);
+  box-shadow: 2px 12px 73px -18px rgba(179, 179, 179, 0.85);
+  transition: all 0.3s;
+}
+.stats-item:hover {
+  scale: 1.2;
+}
+.stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.stats-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 480px) {
+  .stats-list-item {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+.stats-list-item-title {
+  font-weight: bold;
+  font-size: clamp(1.375rem, 1.193rem + 0.91vw, 1.875rem);
+}
+.stats-list-item-data {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.stats-list-item-data-text {
+  font-size: clamp(1.125rem, 1.034rem + 0.45vw, 1.375rem);
+}
+.stats-list-item-data-img {
+  padding: 15px;
+  border-radius: 12px;
+  z-index: 1;
+  position: relative;
+  display: inline-block;
+}
+.stats-list-item-data-img img {
+  z-index: 2;
+  max-width: clamp(1.563rem, 1.222rem + 1.7vw, 2.5rem);
+  min-height: clamp(1.563rem, 1.222rem + 1.7vw, 2.5rem);
+}
+.stats-list-item-data-img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #DE9DAC;
+  opacity: 0.3;
+  border-radius: 12px;
+}
+
+.profile {
+  /* .profile-container */
+  /* .profile-title */
+  /* .profile-content */
+  /* .profile-user */
+}
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.profile-title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.profile-title-text {
+  font-weight: bold;
+  font-size: 60px;
+}
+.profile-title-coins {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  gap: 10px;
+  background-color: #e9e9e9;
+  border-radius: 10px;
+}
+.profile-title-coins-icon img {
+  max-width: 30px;
+  height: auto;
+}
+.profile-title-coins-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+@media (max-width: 480px) {
+  .profile-title {
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+.profile-content {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 992px) {
+  .profile-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+.profile-block {
+  flex: 0 1 48%;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  box-shadow: 2px 12px 73px -18px rgba(179, 179, 179, 0.85);
+  transition: all 0.3s;
+}
+.profile-block:hover {
+  scale: 1.2;
+}
+@media (max-width: 992px) {
+  .profile-block {
+    flex: 1 1 100%;
+  }
+}
+
+.user {
+  /* .user-title */
+  /* .user-info */
+  /* .user-image */
+  /* .user-profilepic */
+  /* .user-username */
+  /* .user-data */
+  /* .user-nickname */
+  /* .user-email */
+  /* .user-phone */
+}
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+@media (max-width: 768px) {
+  .user-info {
+    justify-content: center;
+    align-items: center;
+  }
+}
+.user-image {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.user-profilepic img {
+  max-width: clamp(6.25rem, 5.114rem + 5.68vw, 9.375rem);
+  height: auto;
+}
+.user-username {
+  font-weight: bold;
+  font-size: 30px;
+}
+.user-data {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.user-data span {
+  font-weight: bold;
+}
 /*--------------------/MAIN--------------------*/
 /*--------------------FOOTER--------------------*/
 /*--------------------/FOOTER--------------------*//*# sourceMappingURL=styles.css.map */

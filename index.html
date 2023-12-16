@@ -55,21 +55,21 @@
     <main class="main">
         <div class="sidebar">
             <div class="sidebar-container">
-                <div class="logo">
+                <div class="logo tabs-title" data-tab="profile">
                     <div class="logo-img"></div>
                     <div class="logo-text">Life<span>Sync</span></div>
                 </div>
                 <div class="sidebar-content">
                     <div class="sidebar-list">
-                        <div class="sidebar-item active">
+                        <div class="sidebar-item active tabs-title" data-tab="todo">
                             <div class="sidebar-item-icon"><img src="assets/tasks.png" alt=""></div>
                             <div class="sidebar-item-text">Your Tasks</div>
                         </div>
-                        <div class="sidebar-item">
+                        <div class="sidebar-item tabs-title" data-tab="stats">
                             <div class="sidebar-item-icon"><img src="assets/statistics.png" alt=""></div>
                             <div class="sidebar-item-text">Statistics</div>
                         </div>
-                        <div class="sidebar-item">
+                        <div class="sidebar-item tabs-title" data-tab="profile">
                             <div class="sidebar-item-icon"><img src="assets/user.png" alt=""></div>
                             <div class="sidebar-item-text">Your Profile</div>
                         </div>
@@ -77,9 +77,159 @@
                 </div>
             </div>
         </div>
-        <section class="todo">
+        <section class="todo tab active" id="todo">
             <div class="todo-container">
                 <div class="todo-title">Tasks</div>
+                <div class="todo-content">
+                    <div class="todo-topline">
+                        <div class="todo-topline-text">Your assignments</div>
+                        <div class="todo-topline-buttons">
+                            <div class="todo-topline-dropdown">
+                                <div class="todo-topline-dropdown-text">Today</div>
+                                <div class="todo-topline-dropdown-arrow"><img src="assets/arrow.svg" alt="" srcset=""></div>
+                            </div>
+                            <div class="todo-topline-add" id="task-form">+</div>
+                        </div>
+                    </div>
+                    <ul class="todo-list">
+                        <div class="todo-item">
+                            <div class="todo-item-left">
+                                <div class="todo-item-upper">
+                                    <div class="todo-item-status"></div>
+                                    <div class="todo-item-title">Finish Project</div>
+                                </div>
+                                <div class="todo-item-bottom">
+                                    <div class="todo-item-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing.</div>
+                                </div>
+                            </div>
+                            <div class="todo-item-right">
+                                <div class="todo-item-timer">01:23:12</div>
+                            </div>
+                        </div>
+                        <div class="todo-item">
+                            <div class="todo-item-left">
+                                <div class="todo-item-upper">
+                                    <div class="todo-item-status"></div>
+                                    <div class="todo-item-title">Finish Project</div>
+                                </div>
+                                <div class="todo-item-bottom">
+                                    <div class="todo-item-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing.</div>
+                                </div>
+                            </div>
+                            <div class="todo-item-right">
+                                <div class="todo-item-timer">01:23:12</div>
+                            </div>
+                        </div>
+                        <div class="todo-item">
+                            <div class="todo-item-left">
+                                <div class="todo-item-upper">
+                                    <div class="todo-item-status"></div>
+                                    <div class="todo-item-title">Finish Project</div>
+                                </div>
+                                <div class="todo-item-bottom">
+                                    <div class="todo-item-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing.</div>
+                                </div>
+                            </div>
+                            <div class="todo-item-right">
+                                <div class="todo-item-timer">01:23:12</div>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="stats tab hidden" id="stats">
+            <div class="stats-container">
+                <div class="stats-title">Statistics</div>
+                <div class="stats-content">
+                    <div class="stats-column">
+                        <div class="stats-item">
+                            <div class="stats-column-title">Life Time</div>
+                            <div class="stats-list">
+                                <div class="stats-list-item">
+                                    <div class="stats-list-item-title">Today</div>
+                                    <div class="stats-list-item-data">
+                                        <div class="stats-list-item-data-text">08:14:51</div>
+                                        <div class="stats-list-item-data-img"><img src="assets/flower.png" alt=""></div>
+                                    </div>
+                                </div>
+                                <div class="stats-list-item">
+                                    <div class="stats-list-item-title">Yesterday</div>
+                                    <div class="stats-list-item-data">
+                                        <div class="stats-list-item-data-text">08:14:51</div>
+                                        <div class="stats-list-item-data-img"><img src="assets/flower.png" alt=""></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stats-item">
+                            <div class="stats-column-title">Recent Activity</div>
+                            <div class="stats-img"><img src="assets/recents.png" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="stats-column">
+                        <div class="stats-item">
+                        <div class="stats-column-title">Work Time</div>
+                            <div class="stats-list">
+                                <div class="stats-list-item">
+                                    <div class="stats-list-item-title">Work Time</div>
+                                    <div class="stats-list-item-data">
+                                        <div class="stats-list-item-data-text">06:24:81</div>
+                                        <div class="stats-list-item-data-img"><img src="assets/timer.png" alt=""></div>
+                                    </div>
+                                </div>
+                                <div class="stats-list-item">
+                                    <div class="stats-list-item-title">Yesterday</div>
+                                    <div class="stats-list-item-data">
+                                        <div class="stats-list-item-data-text">06:24:81</div>
+                                        <div class="stats-list-item-data-img"><img src="assets/timer.png" alt=""></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stats-item">
+                            <div class="stats-column-title">Life Time</div>
+                           <div class="stats-img">
+                                <img src="assets/diagram.png" alt="">
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="profile tab hidden" id="profile">
+            <div class="profile-container">
+                <div class="profile-title">
+                    <div class="profile-title-text">Profile</div>
+                    <div class="profile-title-coins">
+                        <div class="profile-title-coins-icon"><img src="assets/coins.png" alt=""></div>
+                        <div class="profile-title-coins-text">99 coins</div>
+                    </div>
+                </div>
+                <div class="profile-content">
+                    <div class="profile-block">
+                        <div class="user-title">Your profile</div>
+                        <div class="user-info">
+                            <div class="user-image">
+                                <div class="user-profilepic"><img src="assets/user-sqare.png" alt=""></div>
+                                <div class="user-username">Manjay Gupta</div>
+                            </div>
+                            <div class="user-data">
+                                <div class="user-nickname"><span>Username:</span> @ngakjn</div>
+                                <div class="user-email"><span>Email:</span> fkbsnfkn@gmail.com</div>
+                                <div class="user-phone"><span>Phone number:</span> +33756983545</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-block">
+                        <div class="user-title">Your charackter</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="todo tab hidden" id="main">
+            <div class="todo-container">
+                <div class="todo-title">Profile</div>
                 <div class="todo-content">
                     <div class="todo-topline">
                         <div class="todo-topline-text">Your assignments</div>
@@ -144,5 +294,6 @@
     <footer class="footer"></footer>
     <script src="js/menu.js"></script>
     <script src="js/addTask.js"></script>
+    <script src="js/pageSelection.js"></script>
 </body>
 </html>
