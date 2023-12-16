@@ -91,7 +91,14 @@ function displaySavedTasks() {
     var savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
     // Пройтися по кожному збереженому завданню та додати його до списку
-    savedTasks.forEach(function(task) {
+	if (savedTasks.length === 0) {
+		var emptyText = document.createElement('div');
+		emptyText.className = 'emptyText';
+		emptyText.textContent = "No tasks available. Add new tasks to get started!";
+		taskList.appendChild(emptyText);
+	}
+	
+    savedTasks.forEach(function(task, index) {
         var listItem = document.createElement('li');
         listItem.className = 'todo-item';
 
@@ -108,9 +115,9 @@ function displaySavedTasks() {
         titleDiv.className = 'todo-item-title';
         titleDiv.textContent = task.taskTitle;
 
-        var categoryDiv = document.createElement('div');  // Додайте новий елемент для відображення категорії
+        var categoryDiv = document.createElement('div');  
         categoryDiv.className = 'todo-item-category';
-        categoryDiv.textContent = task.category;
+        categoryDiv.textContent = 'Category: ' + task.category;
 
         var bottomDiv = document.createElement('div');
         bottomDiv.className = 'todo-item-bottom';
@@ -139,5 +146,37 @@ function displaySavedTasks() {
         listItem.appendChild(rightDiv);
 
         taskList.appendChild(listItem);
+		listItem.addEventListener('click', function () {
+			// Очищення попереднього інтервалу (якщо такий існує)
+			clearInterval(countdownInterval);
+	
+			isTaskChosen = !isTaskChosen;
+			updateTaskDisplay();
+			localStorage.setItem('isTaskChosen', isTaskChosen);
+	
+			let currentTaskData = {
+				taskTitle: task.taskTitle,
+				description: task.description,
+				timeToDo: task.timeToDo,
+				category: task.category 
+			};
+			localStorage.setItem('currentTaskData', JSON.stringify(currentTaskData));
+	
+			var currentTaskTitleElement = document.getElementById('currentTaskTitle');
+			var currentTaskDescriptionElement = document.getElementById('currentTaskDescription');
+			var currentTaskCategoryElement = document.getElementById('currentTaskCategory');
+	
+			currentTaskTitleElement.textContent = currentTaskData.taskTitle;
+			currentTaskDescriptionElement.textContent = currentTaskData.description;
+			currentTaskCategoryElement.textContent = currentTaskData.category;
+	
+			startTimer(currentTaskData.timeToDo*3600);
+	
+			savedTasks.splice(index, 1);
+			localStorage.setItem('tasks', JSON.stringify(savedTasks));
+	
+			displaySavedTasks();
+		});
+		
     });
 }

@@ -97,6 +97,14 @@
                             <div class="todo-topline-add" id="task-form">+</div>
                         </div>
                     </div>
+                    <div class="current-task" id="currentTask">
+                        <h2 id="currentTaskTitle"></h2>
+                        <p id="currentTaskDescription"></p>
+                        <p id="currentTaskTime">Time remaining: <span id="timer"></span></p>
+                        <p id="currentTaskCategory"></p>
+                        <button onclick="endGoingTask()">end task</button>
+                    </div>
+                    
                     <ul class="todo-list" id="taskList"></ul>
                 </div>
             </div>
@@ -107,6 +115,7 @@
     <footer class="footer"></footer>
     <script src="js/menu.js"></script>
     <script src="js/addTask.js"></script>
+    <script src="js/headerTask.js"></script>
     <script>
         window.onload = function () {
         displaySavedTasks();
