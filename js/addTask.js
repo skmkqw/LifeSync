@@ -19,6 +19,8 @@ function saveTask() {
     var description = document.getElementById('description').value;
     var timeToDo = document.getElementById('timeToDo').value;
 	var category = document.getElementById('category').value;
+
+
     if(category == 'work'){
 
         category = 'Work';
@@ -26,6 +28,7 @@ function saveTask() {
     if(category == 'life'){
         category = 'Life';
     }
+
     var frequency = document.getElementById('todo-topline-dropdown-text').textContent;
     console.log(frequency);
 
@@ -52,9 +55,13 @@ function saveTask() {
 
     // Перевірка правильності формату часу (час повинен бути числом)
     if (!/^\d+$/.test(timeToDo)) {
+
+		dataIsNormal = false;
+
         alert('Please enter a valid time (numeric value only).');
         return;
     }
+
 
     // Перевірка правильності формату категорії
     if (category != 'Work'  && category != 'Life') {
@@ -235,6 +242,7 @@ function displaySavedTasks() {
             else if(frequency == 'This month'){
                localStorage.setItem('tasksMonth', JSON.stringify(savedTasks));
             }
+
 
             if(task.category = 'Work'){
                 var timeForWork = localStorage.getItem('timeForWork');
