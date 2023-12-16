@@ -19,6 +19,8 @@ function saveTask() {
     var description = document.getElementById('description').value;
     var timeToDo = document.getElementById('timeToDo').value;
 	var category = document.getElementById('category').value;
+    var frequency = document.getElementById('todo-topline-dropdown-text').textContent;
+    console.log(frequency);
 
     // Перевірка чи всі поля заповнені
     if (!taskTitle) {
@@ -56,14 +58,33 @@ function saveTask() {
         category: category  // Додайте категорію до об'єкту taskData
     };
 
-    // Отримати раніше збережені завдання
-    var savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
-
-    // Додати нове завдання до списку
-    savedTasks.unshift(taskData);
-
-    // Зберегти оновлений список завдань
-    localStorage.setItem('tasks', JSON.stringify(savedTasks));
+    
+    
+    if(frequency == 'Today'){
+        // Отримати раніше збережені завдання
+        var savedTasks = JSON.parse(localStorage.getItem('tasksToday')) || [];
+        // Додати нове завдання до списку
+        savedTasks.unshift(taskData);
+         // Зберегти оновлений список завдань
+        localStorage.setItem('tasksToday', JSON.stringify(savedTasks));
+    }
+    else if(frequency == 'This week'){
+        // Отримати раніше збережені завдання
+        var savedTasks = JSON.parse(localStorage.getItem('tasksWeek')) || [];
+        // Додати нове завдання до списку
+        savedTasks.unshift(taskData);
+        // Зберегти оновлений список завдань
+        localStorage.setItem('tasksWeek', JSON.stringify(savedTasks));
+    }
+    else if(frequency == 'This month'){
+        // Отримати раніше збережені завдання
+        var savedTasks = JSON.parse(localStorage.getItem('tasksMonth')) || [];
+        // Додати нове завдання до списку
+        savedTasks.unshift(taskData);
+        // Зберегти оновлений список завдань
+        localStorage.setItem('tasksMonth', JSON.stringify(savedTasks));
+    }
+   
 
     // Вивести повідомлення про успішне збереження
     alert('Task saved successfully!');
@@ -84,18 +105,29 @@ function saveTask() {
 
 
 function displaySavedTasks() {
+    var frequency = document.getElementById('todo-topline-dropdown-text').textContent;
     var taskList = document.getElementById('taskList');
     taskList.innerHTML = ''; // Очистити список перед оновленням
 
+    var savedTasks = null;
     // Отримати збережені завдання
-    var savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
-
+    if(frequency == 'Today'){
+        savedTasks = JSON.parse(localStorage.getItem('tasksToday')) || [];
+    }
+    else if(frequency == 'This week'){
+       savedTasks = JSON.parse(localStorage.getItem('tasksWeek')) || [];
+    }
+    else if(frequency == 'This month'){
+       savedTasks = JSON.parse(localStorage.getItem('tasksMonth')) || [];
+    }
+    
     // Пройтися по кожному збереженому завданню та додати його до списку
-	if (savedTasks.length === 0) {
+	if (savedTasks == null || savedTasks.length == 0) {
 		var emptyText = document.createElement('div');
 		emptyText.className = 'emptyText';
 		emptyText.textContent = "No tasks available. Add new tasks to get started!";
 		taskList.appendChild(emptyText);
+        return;
 	}
 	
     savedTasks.forEach(function(task, index) {
@@ -182,7 +214,15 @@ function displaySavedTasks() {
 			startTimer(currentTaskData.timeToDo*3600);
 	
 			savedTasks.splice(index, 1);
-			localStorage.setItem('tasks', JSON.stringify(savedTasks));
+            if(frequency == 'Today'){
+                localStorage.setItem('tasksToday', JSON.stringify(savedTasks));
+            }
+            else if(frequency == 'This week'){
+               localStorage.setItem('tasksWeek', JSON.stringify(savedTasks));
+            }
+            else if(frequency == 'This month'){
+               localStorage.setItem('tasksMonth', JSON.stringify(savedTasks));
+            }
 	
 			displaySavedTasks();
 		});
