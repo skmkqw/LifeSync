@@ -48,7 +48,7 @@
                         </li>
                         <li class="menu-item">
                             <div class="menu-user">
-                                <div class="menu-username">Manjay Gupta</div>
+                                <div class="menu-username"></div>
                                 <div class="menu-userpic"><img src="assets/profile-picture.png" alt=""></div>
                             </div>
                         </li>
@@ -186,7 +186,7 @@
                     <div class="profile-title-text">Profile</div>
                     <div class="profile-title-coins">
                         <div class="profile-title-coins-icon"><img src="assets/coins.png" alt=""></div>
-                        <div class="profile-title-coins-text">99 coins</div>
+                        <div class="profile-title-coins-text"></div>
                     </div>
                 </div>
                 <div class="profile-content">
@@ -195,12 +195,13 @@
                         <div class="user-info">
                             <div class="user-image">
                                 <div class="user-profilepic"><img src="assets/user-sqare.png" alt=""></div>
-                                <div class="user-username">Manjay Gupta</div>
+                                <div class="user-username"></div>
                             </div>
                             <div class="user-data">
-                                <div class="user-nickname"><span>Username:</span> @ngakjn</div>
-                                <div class="user-email"><span>Email:</span> fkbsnfkn@gmail.com</div>
-                                <div class="user-phone"><span>Phone number:</span> +33756983545</div>
+                                <div class="user-nickname"><span id="nick">Username:</span></div>
+                                <div class="user-email"><span id="mail">Email:</span></div>
+                                <div class="user-phone"><span id="phone">Phone number:</span></div>
+                                <div class="user-subscription"><span id="sub">Subscription:</span></div>
                             </div>
                         </div>
                     </div>
@@ -213,7 +214,7 @@
     </main>
     
 
-    <footer class="footer"></footer>
+    <script src="js/user.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/addTask.js"></script>
     <script src="js/pageSelection.js"></script>
@@ -221,7 +222,7 @@
     <script src="js/headerTask.js"></script>
     <script>
         window.onload = function () {
-        displaySavedTasks();
+            displaySavedTasks();
         };
     </script>
 </body>

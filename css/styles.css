@@ -694,7 +694,7 @@ body.lock {
   transition: all 0.3s;
 }
 .stats-item:hover {
-  scale: 1.2;
+  scale: 1.1;
 }
 .stats-list {
   display: flex;
@@ -814,7 +814,7 @@ body.lock {
   transition: all 0.3s;
 }
 .profile-block:hover {
-  scale: 1.2;
+  scale: 1.1;
 }
 @media (max-width: 992px) {
   .profile-block {
